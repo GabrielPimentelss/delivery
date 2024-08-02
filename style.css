@@ -1,106 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 * {
     border: 0;
     outline: 0;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Montserrat, sans-serif;
     touch-action: manipulation;
-    
+    list-style: none;
+    font-family: "Open Sans", sans-serif;
 }
 
+body {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* herder */
 header {
     width: 100%;
     display: flex;
     background-color: #f6f6f6;
-    border: ;
-    
+    align-items: center;
+    border-bottom: solid 2px #ff0000;
 }
 
-.nav-botom>span {
+.link-nav>span {
     justify-content: center;
     align-self: center;
     padding-left: 5%;
-}
-
-.nav-botom {
-    display: flex;
-    padding-left: 15%;
+    color: #000;
+    font-weight: 800;
+    font-size: 20px;
 }
 
 .link-nav {
-    margin-left: 15%;
     text-decoration: none;
+    padding-left: 15%;
+    display: flex;
+    align-items: center;
+}
 
+#esq {
+    padding-left: 0%;
 }
 
 .nav-bar {
-    display: flex;
-    justify-content: space-between; /* ou outro alinhamento desejado */
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-}
-#home{
-    height: 50px;
-}
-#cart{
-    height: 56px;
+    width: 85%;
+    flex: 1 1 200px;
 }
 
-#ped{
-    height: 55px;
-}
-#box-ped{
-    margin-right: 31%;
-}
-#logo{
-    width: 100%;
+
+#logo {
     max-height: 56px;
 }
-#conteiner-logo{
-    width: 15%; 
+
+#conteiner-logo {
+    width: 15%;
     align-self: center;
     max-height: 56px;
     padding-left: 1%;
     overflow: hidden;
 }
+
+.icon {
+    flex-shrink: 5;
+    height: 40px;
+}
+
 @media(max-width : 800px) {
-    .nav-botom {
-        flex-direction: column;
-    }
     .link-nav {
         padding-left: 5%;
+        margin-left: 15%;
+        text-decoration: none;
+        flex-direction: column;
     }
 
     header {
         width: 100%;
         position: fixed;
-    }
-
-    .link-nav {
-        margin-left: 15%;
-        text-decoration: none;
+        display: block;
+        bottom: 0;
     }
 
     .nav-bar {
         width: 100%;
     }
 
-    #esq {
-        margin-left: 0%;
-    }
-    #home{
+    #ped {
         height: 25px;
     }
-    #cart{
-        height: 30px;
-        margin-top: 3%;
-    }
-    
-    #ped{
-        height: 25px;
-    }
-    .icon{
+
+    .icon {
         margin-top: 15%;
     }
+
+    #logo {
+        display: none;
+    }
+
+    .box-search {
+        display: none;
+    }
+
+    .box-search-mobile {
+        align-content: center;
+        border: solid #000 1px;
+        /*width: 25%;*/
+        margin-right: 10px;
+        margin-top: 5px;
+        height: 35px;
+        background-color: #353b48;
+        border-radius: 40px;
+        overflow: hidden;
+        padding: 10px;
+        display: flex;
+        position: absolute;
+    }
+
+    #dir {
+        padding-right: 10%;
+    }
+}
+
+@media(min-width : 800px) {
+    .box-search-mobile {
+        display: none;
+    }
+}
+
+@media(max-width : 930px) {
+    .box-search:hover>.search {
+        width: 200px;
+        padding: 0 6px;
+    }
+}
+
+/* fin do herder*/
+
+/* menu lateral */
+.cont-op {
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    height: 100vh;
+
+}
+
+.list-op {
+    display: flex;
+    flex-direction: column;
+    /*height: 100%;*/
+}
+
+.list-op>li {
+
+    border-bottom: solid 1px #ff0000;
+    align-items: center;
+    font-size: 25px;
+    padding-bottom: 7px;
+    padding-left: 5px;
+    font-weight: 600;
+
+}
+
+.box-search {
+    align-items: center;
+    border-bottom: solid #0000008c 1px;
+    width: 100%;
+    height: 42px;
+    background-color: rgb(230, 230, 230);
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+}
+
+.search {
+    height: 100%;
+    width: 100%;
+    font-size: 15px;
+    background: none;
+    border: none;
+    outline: none;
+    color: #2d2d2d;
+}
+
+#lupa {
+    width: 30px;
+    margin-right: 5px;
+}
+
+.cont-box {
+    display: flex;
+    /*height: 100vh;*/
+    position: relative;
+    justify-content: center;
+    gap: 150px;
+    margin-top: 32px;
+}
+
+.box-op {
+    /*position: absolute;*/
+    background-color: blue;
+    height: calc(5vw*(19/9));
+    width: calc(5vw*(19/9));
+    text-align: center;
+    align-content: center;
+    border-radius: 15%;
+}
+
+.tudo {
+    background-image: url(textura-de-madeira-fundo-superficie-antigo-padrao-natural_23-2148283207.avif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
 }
